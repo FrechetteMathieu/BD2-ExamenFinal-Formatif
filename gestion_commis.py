@@ -1,14 +1,14 @@
 import bcrypt
 
-def HashMotDePasse(mot_de_passe):
-    # Création d'un salt unique pour le nouveau usager
-    salt = bcrypt.gensalt()
+def HashMotDePasse(mot_de_passe, salt):
     # Hashage du mot de passe
     mot_de_passe_hash = bcrypt.hashpw(mot_de_passe.encode('utf8'), salt)
 
     return mot_de_passe_hash
 
 def AjouterNouveauCommis():
+    # Création d'un salt unique pour le nouveau usager
+    salt = bcrypt.gensalt()
     print('Ajouter un commis')
     return False
 
